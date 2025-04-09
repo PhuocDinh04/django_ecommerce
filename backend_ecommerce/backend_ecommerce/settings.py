@@ -29,14 +29,14 @@ SECRET_KEY = 'django-insecure-qjt42m-tk2(7qpe^@0jgenoyw$88e!&5ju%ne65^nu85*&ay5i
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-DEBUG = False
+DEBUG = True
 INSTALLED_APPS = ["whitenoise.runserver_nostatic", ...]
 MIDDLEWARE = ["whitenoise.middleware.WhiteNoiseMiddleware", ...]
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STORAGES = {"staticfiles": {"BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage"}}
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
 
 
 # Application definition
