@@ -17,11 +17,7 @@
     "env": {
       "PYTHON_VERSION": "3.9"
     },
-    "functions": {
-      "backend_ecommerce/wsgi.py": {
-        "runtime": "python@3.9",
-        "handler": "gunicorn backend_ecommerce.wsgi:application --bind 0.0.0.0:$PORT"
-      }
-    },
-    "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput",
+    "outputDirectory": "staticfiles",
+    "startCommand": "gunicorn backend_ecommerce.wsgi:application --bind 0.0.0.0:$PORT"
   }
